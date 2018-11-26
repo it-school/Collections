@@ -1,36 +1,35 @@
 package com.itschool;
 
-import org.jetbrains.annotations.NotNull;
-
 import java.util.ArrayList;
 import java.util.HashSet;
 
-public class Users
-{
-    ArrayList<User> users;
-    HashSet<String> logins;
+class Users {
+    private final ArrayList<User> users;
+    private final HashSet<String> logins;
 
-    public Users() {
+    Users() {
         users = new ArrayList<>();
         logins = new HashSet<>();
     }
 
-    public boolean Add(@NotNull User user)
-    {
+    ArrayList<User> getUsers() {
+        return users;
+    }
+
+    @SuppressWarnings({"SuspiciousMethodCalls", "UnusedReturnValue"})
+    boolean add(User user) {
         boolean result = false;
 
         int size = logins.size();
         logins.add(user.loginPassword.login);
 
         logins.add(user.loginPassword.login);
-        if (logins.size() > size)
-        {
+        if (logins.size() > size) {
             users.add(user);
             result = true;
-        }
-        else
+        } else {
             logins.remove(size);
-
+        }
         return result;
     }
 }

@@ -1,15 +1,15 @@
 package com.itschool;
 
-public class Authentification
-{
-    String login;
-    String password;
+/**
+ * Class, that has login and password information
+ */
+class Authentification {
+    final String login;
+    final String password;
 
-    public Authentification(String login, String password) {
+    Authentification(String login, String password) {
         this.login = login;
         this.password = password;
     }
 
-    public Authentification() {
-    }
 }

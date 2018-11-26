@@ -1,41 +1,35 @@
 package com.itschool;
 
-import org.jetbrains.annotations.NotNull;
-
-import java.util.HashSet;
-
 public class Main {
 
-    public static void main(String[] args)
-    {
-        @NotNull HashSet<Integer> integers = new HashSet<>();
+    public static void main(String[] args) {
+        /*
+        HashSet<Integer> integers = new HashSet<>();
         integers.add(1);
         integers.add(2);
         integers.add(3);
 
-        for (Integer i: integers)
-        {
+        for (Integer i : integers) {
             System.out.println(i);
         }
+        */
+        Users users = new Users();
+        User user1 = new User("user1", new Authentification("user1", "passw1"));
+        users.add(user1);
+        users.add(new User("user2", new Authentification("user2", "passw2")));
+        users.add(new User("user3", new Authentification("user3", "passw3")));
 
-        @NotNull Users users = new Users();
-        @NotNull User user1 = new User("user1", new Authentification("user1", "passw1"));
-        users.Add(user1);
-        users.Add(new User("user2", new Authentification("user2", "passw2")));
-        users.Add(new User("user3", new Authentification("user3", "passw3")));
-
-        for (User user: users.users)
-        {
+        for (User user : users.getUsers()) {
             System.out.println(user);
         }
 
-        if (users.users.contains(new User("user1", new Authentification("user1", "passw1"))))
+        if (users.getUsers().contains(new User("user1", new Authentification("user1", "passw1")))) {
             System.out.println("Contains!!!");
-        users.users.remove(user1);
+        }
+        users.getUsers().remove(user1);
 
 
-        for (User user: users.users)
-        {
+        for (final User user : users.getUsers()) {
             System.out.println(user);
         }
     }
