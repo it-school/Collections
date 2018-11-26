@@ -3,16 +3,6 @@ package com.itschool;
 public class Main {
 
     public static void main(String[] args) {
-        /*
-        HashSet<Integer> integers = new HashSet<>();
-        integers.add(1);
-        integers.add(2);
-        integers.add(3);
-
-        for (Integer i : integers) {
-            System.out.println(i);
-        }
-        */
         Users users = new Users();
         User user1 = new User("user1", new Authentification("user1", "passw1"));
         users.add(user1);
